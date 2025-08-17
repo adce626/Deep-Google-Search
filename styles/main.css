@@ -523,7 +523,7 @@ h4 { font-size: var(--font-size-lg); }
 
 .dork-items {
     padding: 0;
-    max-height: 400px; /* أو أكبر حسب ما يناسبك */
+    max-height: 1000px; /* أو أكبر حسب ما يناسبك */
     overflow-y: auto;
     transition: max-height var(--transition-base);
 }

@@ -88,6 +88,42 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com "dump" | "backup" | "export" | "archive" | "snapshot"',
                 description: 'Database dumps and backup files'
+            },
+            {
+                query: 'site:example.com "jenkins" | "gitlab" | "bamboo" | "teamcity" | "circleci"',
+                description: 'CI/CD platform references'
+            },
+            {
+                query: 'site:example.com "elastic" | "logstash" | "kibana" | "elasticsearch" | "splunk"',
+                description: 'Log management and search platforms'
+            },
+            {
+                query: 'site:example.com "docker-compose.yml" | "Dockerfile" | "kubernetes.yaml" | ".dockerignore"',
+                description: 'Container configuration files'
+            },
+            {
+                query: 'site:example.com "ansible" | "puppet" | "chef" | "saltstack" | "terraform"',
+                description: 'Infrastructure automation tools'
+            },
+            {
+                query: 'site:example.com ".git" | ".svn" | ".hg" | ".bzr" | "version control"',
+                description: 'Version control system files'
+            },
+            {
+                query: 'site:example.com "node_modules" | "vendor" | "bower_components" | "packages"',
+                description: 'Package manager directories'
+            },
+            {
+                query: 'site:example.com "localhost" | "127.0.0.1" | "0.0.0.0" | "internal network"',
+                description: 'Local and internal network references'
+            },
+            {
+                query: 'site:example.com "staging" | "testing" | "development" | "sandbox" | "preprod"',
+                description: 'Non-production environment indicators'
+            },
+            {
+                query: 'site:example.com "TODO" | "FIXME" | "BUG" | "HACK" | "NOTE"',
+                description: 'Developer comments and notes'
             }
         ]
     },
@@ -179,6 +215,42 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com "XMLHttpRequest" | "fetch(" | "axios" | "ajax" | "$.get" | "$.post"',
                 description: 'Client-side request patterns for DOM XSS'
+            },
+            {
+                query: 'inurl:admin= | inurl:user= | inurl:username= | inurl:userid= | inurl:uid= site:example.com',
+                description: 'User identification parameters'
+            },
+            {
+                query: 'inurl:search= | inurl:query= | inurl:q= | inurl:keyword= | inurl:term= site:example.com',
+                description: 'Search functionality parameters'
+            },
+            {
+                query: 'inurl:sort= | inurl:order= | inurl:orderby= | inurl:filter= | inurl:limit= site:example.com',
+                description: 'Data manipulation parameters'
+            },
+            {
+                query: 'site:example.com "SELECT * FROM" | "INSERT INTO" | "UPDATE" | "DELETE FROM" | "DROP TABLE"',
+                description: 'SQL query fragments in responses'
+            },
+            {
+                query: 'site:example.com "mysql_" | "mysqli_" | "pg_" | "oci_" | "sqlite_" | "mssql_"',
+                description: 'Database function calls'
+            },
+            {
+                query: 'site:example.com "Warning:" | "Notice:" | "Error:" | "Fatal error:" | "Parse error:"',
+                description: 'PHP error messages'
+            },
+            {
+                query: 'site:example.com "Traceback" | "Exception:" | "Error:" | "AttributeError:" | "ValueError:"',
+                description: 'Python error messages'
+            },
+            {
+                query: 'site:example.com "java.lang" | "NullPointerException" | "ClassNotFoundException" | "SQLException"',
+                description: 'Java error messages'
+            },
+            {
+                query: 'site:example.com "undefined method" | "undefined variable" | "undefined index" | "undefined offset"',
+                description: 'Undefined errors indicating code issues'
             }
         ]
     },
@@ -270,6 +342,42 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com "postman" | "insomnia" | "swagger.json" | "openapi.json" | "api-docs.json"',
                 description: 'API documentation and collection files'
+            },
+            {
+                query: 'site:example.com inurl:"/graphql" | "query" | "mutation" | "subscription" | "GraphQL"',
+                description: 'GraphQL API endpoints and queries'
+            },
+            {
+                query: 'site:example.com "REST" | "RESTful" | "endpoint" | "resource" | "HTTP methods"',
+                description: 'REST API documentation'
+            },
+            {
+                query: 'site:example.com "authentication" | "authorization" | "oauth" | "jwt" | "bearer token"',
+                description: 'API authentication methods'
+            },
+            {
+                query: 'site:example.com "rate limiting" | "throttling" | "quota" | "429 error" | "too many requests"',
+                description: 'API rate limiting information'
+            },
+            {
+                query: 'site:example.com "webhook" | "callback" | "notification" | "event" | "trigger"',
+                description: 'Webhook and event-driven API features'
+            },
+            {
+                query: 'site:example.com "API key" | "client secret" | "access token" | "refresh token"',
+                description: 'API credential references'
+            },
+            {
+                query: 'site:example.com "curl" | "HTTP request" | "request example" | "code sample"',
+                description: 'API usage examples and code samples'
+            },
+            {
+                query: 'site:example.com "beta" | "alpha" | "experimental" | "preview" | "unstable"',
+                description: 'Beta and experimental API features'
+            },
+            {
+                query: 'site:example.com "deprecated" | "legacy" | "obsolete" | "discontinued" | "end of life"',
+                description: 'Deprecated API endpoints'
             }
         ]
     },
@@ -869,6 +977,42 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com "keychain" | "keystore" | "secure storage" | "encrypted storage"',
                 description: 'Secure mobile storage'
+            },
+            {
+                query: 'site:example.com "NFC" | "near field" | "contactless" | "RFID" | "beacon"',
+                description: 'Near-field communication technologies'
+            },
+            {
+                query: 'site:example.com "AR" | "VR" | "augmented reality" | "virtual reality" | "mixed reality"',
+                description: 'Augmented and virtual reality features'
+            },
+            {
+                query: 'site:example.com "machine learning" | "AI" | "neural network" | "deep learning"',
+                description: 'Artificial intelligence and machine learning'
+            },
+            {
+                query: 'site:example.com "5G" | "LTE" | "WiFi 6" | "cellular" | "network connectivity"',
+                description: 'Advanced connectivity technologies'
+            },
+            {
+                query: 'site:example.com "wearable" | "smartwatch" | "fitness tracker" | "health monitor"',
+                description: 'Wearable device integration'
+            },
+            {
+                query: 'site:example.com "home automation" | "smart home" | "IoT hub" | "connected devices"',
+                description: 'Smart home and automation systems'
+            },
+            {
+                query: 'site:example.com "edge computing" | "fog computing" | "distributed processing"',
+                description: 'Edge and distributed computing'
+            },
+            {
+                query: 'site:example.com "mesh network" | "peer-to-peer" | "decentralized" | "distributed network"',
+                description: 'Decentralized networking technologies'
+            },
+            {
+                query: 'site:example.com "battery optimization" | "power management" | "energy efficiency"',
+                description: 'Power and battery management'
             }
         ]
     },

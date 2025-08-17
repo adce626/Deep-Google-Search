@@ -212,17 +212,17 @@ class BugBountyApp {
         const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(processedQuery)}`;
 
         return `
-            <div class="dork-item">
+            <div class="dork-item" onclick="window.open('${googleUrl}', '_blank')">
                 <div class="dork-content">
                     <div class="dork-query">${this.escapeHtml(processedQuery)}</div>
                     <p class="dork-description">${this.escapeHtml(dork.description)}</p>
                 </div>
-                <div class="dork-actions">
+                <div class="dork-actions" onclick="event.stopPropagation()">
                     <button class="btn-icon" onclick="app.copyToClipboard('${this.escapeForJs(processedQuery)}')" title="Copy Query">
                         <i class="fas fa-copy"></i>
                     </button>
                     <button class="btn-icon" onclick="window.open('${googleUrl}', '_blank')" title="Search Google">
-                        <i class="fas fa-search"></i>
+                        <i class="fab fa-google"></i>
                     </button>
                     <button class="btn-icon" onclick="app.saveDork('${this.escapeForJs(processedQuery)}', '${this.escapeForJs(dork.description)}')" title="Save to Workspace">
                         <i class="fas fa-bookmark"></i>

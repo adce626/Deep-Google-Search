@@ -2,13 +2,13 @@
 
 ## Overview
 
-This is an advanced web-based reconnaissance platform designed for bug bounty hunters and security professionals. The application provides a comprehensive collection of over 300+ Google Dorks (specialized search queries) organized into 14 specialized categories for discovering vulnerabilities, sensitive files, and potential security issues in target domains. The platform features an intuitive interface with enhanced visual design, dynamic domain substitution, advanced filtering capabilities, and a powerful workspace management system for organizing reconnaissance sessions.
+This is an advanced web-based reconnaissance platform designed for bug bounty hunters and security professionals. The application provides a comprehensive collection of over 400+ Google Dorks (specialized search queries) organized into 14 specialized categories for discovering vulnerabilities, sensitive files, and potential security issues in target domains. The platform features an intuitive interface with enhanced visual design, dynamic domain substitution, advanced filtering capabilities, and a powerful workspace management system for organizing reconnaissance sessions.
 
 ## Recent Updates (August 2025)
 
 ### Enhanced Google Dorks Database
 - **Expanded to 14+ Categories**: Added Advanced Search, Mobile & IoT Security, Cryptocurrency & Blockchain, and Security Research categories
-- **300+ Total Dorks**: Comprehensive collection covering all major vulnerability types and attack vectors
+- **400+ Total Dorks**: Comprehensive collection covering all major vulnerability types and attack vectors
 - **File Upload Detection**: Added specialized dorks for hunting file upload forms and endpoints
 - **Enhanced Vulnerability Parameters**: Expanded SQL injection, XSS, LFI, RFI, and RCE detection capabilities
 - **Technology-Specific Dorks**: WordPress, Drupal, Joomla, and framework-specific search patterns
@@ -17,6 +17,10 @@ This is an advanced web-based reconnaissance platform designed for bug bounty hu
 - **Cloud Platform Integration**: AWS S3, Google Cloud Storage, Azure, Heroku, and CDN detection
 - **Mobile Security**: IoT protocols, mobile frameworks, biometric authentication, and device identifiers
 - **Cryptocurrency Research**: DeFi protocols, blockchain networks, wallet security, and token analysis
+- **One-Click Google Search**: Direct click-to-search functionality for instant query execution
+- **Enhanced Visual Effects**: Improved hover animations, gradient buttons, and interactive elements
+- **Developer-Focused Dorks**: Version control, CI/CD platforms, error messages, and debugging information
+- **Advanced API Discovery**: GraphQL endpoints, webhook configurations, authentication methods
 
 ### Visual Design Improvements
 - **Enhanced Color Scheme**: Implemented eye-comfortable colors with improved contrast ratios

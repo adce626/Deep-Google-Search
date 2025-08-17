@@ -318,6 +318,12 @@ class BugBountyApp {
     updateResultCount() {
         const count = this.filteredDorks.length;
         document.getElementById('resultCount').textContent = `${count} dork${count !== 1 ? 's' : ''} available`;
+        
+        // Update statistics
+        const totalDorks = this.allDorks.length;
+        const totalCategories = Object.keys(window.GOOGLE_DORKS).length;
+        document.getElementById('totalDorks').textContent = totalDorks;
+        document.getElementById('totalCategories').textContent = totalCategories;
     }
 
     async copyToClipboard(text) {

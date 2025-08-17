@@ -2,11 +2,30 @@
 
 ## Overview
 
-This is a web-based reconnaissance platform designed for bug bounty hunters and security professionals. The application provides a comprehensive collection of Google Dorks (specialized search queries) specifically curated for discovering vulnerabilities, sensitive files, and potential security issues in target domains. The platform features an intuitive interface for entering target domains, filtering dorks by category, and managing reconnaissance sessions through a built-in workspace.
+This is an advanced web-based reconnaissance platform designed for bug bounty hunters and security professionals. The application provides a comprehensive collection of over 200+ Google Dorks (specialized search queries) organized into 14 specialized categories for discovering vulnerabilities, sensitive files, and potential security issues in target domains. The platform features an intuitive interface with enhanced visual design, dynamic domain substitution, advanced filtering capabilities, and a powerful workspace management system for organizing reconnaissance sessions.
+
+## Recent Updates (August 2025)
+
+### Enhanced Google Dorks Database
+- **Expanded to 14+ Categories**: Added Advanced Search, Mobile & IoT Security, Cryptocurrency & Blockchain, and Security Research categories
+- **200+ Total Dorks**: Comprehensive collection covering all major vulnerability types and attack vectors
+- **File Upload Detection**: Added specialized dorks for hunting file upload forms and endpoints
+- **Enhanced Vulnerability Parameters**: Expanded SQL injection, XSS, LFI, RFI, and RCE detection capabilities
+- **Technology-Specific Dorks**: WordPress, Drupal, Joomla, and framework-specific search patterns
+
+### Visual Design Improvements
+- **Enhanced Color Scheme**: Implemented eye-comfortable colors with improved contrast ratios
+- **Gradient Backgrounds**: Added subtle gradient effects for modern appearance
+- **Interactive Elements**: Enhanced hover effects with smooth transitions and shadow effects
+- **Improved Typography**: Better font hierarchy and readability
+- **Visual Statistics**: Added real-time dork count and category statistics
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- **Communication Style**: Simple, everyday language in Arabic and English
+- **Design Philosophy**: Eye-comfortable colors, professional appearance, maximum functionality
+- **Content Focus**: Comprehensive Google Dorks collection with detailed categorization
+- **Technology Stack**: Pure HTML, CSS, JavaScript - no frameworks or external dependencies
 
 ## System Architecture
 

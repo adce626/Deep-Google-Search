@@ -36,6 +36,22 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com "index of" | "parent directory" | "directory listing"',
                 description: 'Directory listings'
+            },
+            {
+                query: 'site:example.com filetype:key | filetype:pem | filetype:ppk | filetype:p12 | filetype:pfx | filetype:cer | filetype:crt',
+                description: 'Certificate and key files'
+            },
+            {
+                query: 'site:example.com "BEGIN RSA PRIVATE KEY" | "BEGIN DSA PRIVATE KEY" | "BEGIN EC PRIVATE KEY" | "BEGIN OPENSSH PRIVATE KEY"',
+                description: 'Private keys in files'
+            },
+            {
+                query: 'site:example.com filetype:properties intext:password | intext:username | intext:pass | intext:secret',
+                description: 'Properties files with credentials'
+            },
+            {
+                query: 'site:example.com "robots.txt" | "sitemap.xml" | "crossdomain.xml" | "clientaccesspolicy.xml"',
+                description: 'Important configuration files'
             }
         ]
     },
@@ -75,6 +91,22 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com intext:"Warning: include(" | intext:"Warning: require_once(" | intext:"Warning: require(" | intext:"Warning: include_once(" | intext:"failed to open stream"',
                 description: 'PHP inclusion errors'
+            },
+            {
+                query: 'inurl:eval= | inurl:exec= | inurl:shell= | inurl:system= | inurl:passthru= | inurl:proc_open= site:example.com',
+                description: 'Code execution parameters'
+            },
+            {
+                query: 'inurl:userid= | inurl:user_id= | inurl:customer_id= | inurl:member_id= | inurl:account_id= site:example.com',
+                description: 'User ID enumeration parameters'
+            },
+            {
+                query: 'site:example.com inurl:"?id=" | inurl:"?user=" | inurl:"?category=" | inurl:"?product=" | inurl:"?page=" | inurl:"?item="',
+                description: 'Common vulnerable parameters'
+            },
+            {
+                query: 'site:example.com intext:"blind sqli" | intext:"sql injection" | intext:"union select" | intext:"1=1" | intext:"or 1=1"',
+                description: 'SQL injection indicators'
             }
         ]
     },
@@ -114,6 +146,22 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:example.com inurl:"/webhook" | inurl:"/callback"',
                 description: 'Webhook endpoints'
+            },
+            {
+                query: 'site:example.com inurl:"/api/users" | inurl:"/api/admin" | inurl:"/api/login" | inurl:"/api/auth"',
+                description: 'Authentication API endpoints'
+            },
+            {
+                query: 'site:example.com inurl:"/api/upload" | inurl:"/api/file" | inurl:"/api/download"',
+                description: 'File handling API endpoints'
+            },
+            {
+                query: 'site:example.com "X-API-Key" | "Authorization: Bearer" | "API-Token" | "Access-Token"',
+                description: 'API authentication headers'
+            },
+            {
+                query: 'site:example.com inurl:"/health" | inurl:"/status" | inurl:"/ping" | inurl:"/version"',
+                description: 'Service health endpoints'
             }
         ]
     },
@@ -174,8 +222,16 @@ const GOOGLE_DORKS = {
                 description: 'Control panels'
             },
             {
-                query: 'site:example.com "choose file" | "select file" | "upload file"',
-                description: 'File upload pages'
+                query: 'site:example.com "Select File" | "Browse" | "Drag and drop your file" | "Attach File" | "Select files" | "File upload" | "Upload your file" | "Submit File" | "Upload Documents" | "Upload Image"',
+                description: 'File upload forms and endpoints - Part 1'
+            },
+            {
+                query: 'site:example.com "Drop files here to upload" | "Choose files to upload" | "Add File" | "Upload PDF" | "Upload Video" | "Upload Photo" | "Import File" | "Upload Resume"',
+                description: 'File upload forms and endpoints - Part 2'
+            },
+            {
+                query: 'site:example.com "Upload files" | "Upload and Submit" | "Choose a file" | "Click to upload" | "Choose an image to upload"',
+                description: 'File upload forms and endpoints - Part 3'
             },
             {
                 query: 'site:example.com intitle:"Admin" | intitle:"Administrator" | intitle:"Control Panel"',
@@ -380,6 +436,14 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:pinterest.com "example.com"',
                 description: 'Pinterest boards'
+            },
+            {
+                query: 'site:discord.com "example.com" | site:t.me "example.com"',
+                description: 'Discord and Telegram mentions'
+            },
+            {
+                query: 'site:medium.com "example.com" | site:dev.to "example.com"',
+                description: 'Developer blogs and articles'
             }
         ]
     },
@@ -419,6 +483,95 @@ const GOOGLE_DORKS = {
             {
                 query: 'site:*/security.txt "example.com"',
                 description: 'Security.txt files'
+            }
+        ]
+    },
+    advanced: {
+        title: "Advanced Search Techniques",
+        icon: "fas fa-brain",
+        description: "Advanced Google search operators and reconnaissance techniques",
+        dorks: [
+            {
+                query: 'site:example.com intitle:"index of" "parent directory" "size" "last modified" "description"',
+                description: 'Detailed directory listings'
+            },
+            {
+                query: 'site:example.com -inurl:www -inurl:mail -inurl:ftp -inurl:localhost -inurl:webmail -inurl:email -inurl:mx',
+                description: 'Clean domain search excluding common subdomains'
+            },
+            {
+                query: 'site:example.com intext:"powered by" | intext:"built with" | intext:"running on"',
+                description: 'Technology stack disclosure'
+            },
+            {
+                query: 'site:example.com "*confidential*" | "*internal*" | "*private*" | "*classified*"',
+                description: 'Sensitive document keywords'
+            },
+            {
+                query: 'site:example.com filetype:pdf | filetype:doc | filetype:xls | filetype:ppt intext:password',
+                description: 'Documents containing password references'
+            },
+            {
+                query: 'site:example.com "Contact us" | "About us" | "Team" | "Staff" | "Employees"',
+                description: 'Information gathering pages'
+            }
+        ]
+    },
+    mobile: {
+        title: "Mobile & IoT Security",
+        icon: "fas fa-mobile-alt",
+        description: "Mobile applications and IoT device security dorks",
+        dorks: [
+            {
+                query: 'site:example.com "android" | "ios" | "mobile app" | "download app"',
+                description: 'Mobile application references'
+            },
+            {
+                query: 'site:example.com inurl:"/mobile" | inurl:"/app" | inurl:"/android" | inurl:"/ios"',
+                description: 'Mobile-specific endpoints'
+            },
+            {
+                query: 'site:example.com "deep link" | "app link" | "universal link" | "custom scheme"',
+                description: 'Mobile deep linking'
+            },
+            {
+                query: 'site:example.com "device id" | "uuid" | "android id" | "advertising id"',
+                description: 'Mobile device identifiers'
+            },
+            {
+                query: 'site:example.com "push notification" | "FCM" | "APNS" | "firebase"',
+                description: 'Push notification services'
+            },
+            {
+                query: 'site:example.com "IoT" | "smart device" | "sensor" | "arduino" | "raspberry pi"',
+                description: 'IoT and smart device references'
+            }
+        ]
+    },
+    crypto: {
+        title: "Cryptocurrency & Blockchain",
+        icon: "fab fa-bitcoin",
+        description: "Cryptocurrency wallets, blockchain, and crypto-related security",
+        dorks: [
+            {
+                query: 'site:example.com "wallet" | "bitcoin" | "ethereum" | "crypto" | "blockchain"',
+                description: 'Cryptocurrency references'
+            },
+            {
+                query: 'site:example.com "private key" | "seed phrase" | "mnemonic" | "wallet.dat"',
+                description: 'Cryptocurrency private data'
+            },
+            {
+                query: 'site:example.com "metamask" | "coinbase" | "binance" | "ledger" | "trezor"',
+                description: 'Cryptocurrency wallet providers'
+            },
+            {
+                query: 'site:example.com "smart contract" | "solidity" | "web3" | "DeFi" | "NFT"',
+                description: 'Blockchain development references'
+            },
+            {
+                query: 'site:example.com intext:"1" | intext:"3" | intext:"bc1" intext:"wallet address"',
+                description: 'Bitcoin wallet addresses'
             }
         ]
     }
